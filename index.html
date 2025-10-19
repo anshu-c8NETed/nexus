@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus - Digital Agency</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">nexus</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-text">0%</div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor">
+        <div class="cursor-dot"></div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <div class="logo-text">nexus</div>
+                <button class="mobile-menu-close">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <nav class="mobile-nav">
+                <a href="#home" class="mobile-nav-link" data-text="Home">
+                    <span class="link-number">01</span>
+                    <span class="link-text">Home</span>
+                </a>
+                <a href="#services" class="mobile-nav-link" data-text="Services">
+                    <span class="link-number">02</span>
+                    <span class="link-text">Services</span>
+                </a>
+                <a href="#projects" class="mobile-nav-link" data-text="Projects">
+                    <span class="link-number">03</span>
+                    <span class="link-text">Projects</span>
+                </a>
+                <a href="#resources" class="mobile-nav-link" data-text="Resources">
+                    <span class="link-number">04</span>
+                    <span class="link-text">Resources</span>
+                </a>
+                <a href="#contact" class="mobile-nav-link" data-text="Contact">
+                    <span class="link-number">05</span>
+                    <span class="link-text">Contact</span>
+                </a>
+            </nav>
+            <div class="mobile-menu-footer">
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="ri-instagram-line"></i></a>
+                    <a href="#" class="social-link"><i class="ri-twitter-x-line"></i></a>
+                    <a href="#" class="social-link"><i class="ri-linkedin-line"></i></a>
+                    <a href="#" class="social-link"><i class="ri-dribbble-line"></i></a>
+                </div>
+                <p class="mobile-menu-email">hello@nexus.agency</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="smooth-wrapper" data-scroll-container>
+        <!-- Navigation -->
+        <nav id="nav" data-scroll data-scroll-sticky data-scroll-target="#smooth-wrapper">
+            <div class="nav-container">
+                <a href="#home" class="logo-text magnetic">nexus</a>
+                <div class="nav-right">
+                    <a href="#services" class="nav-link magnetic">Services</a>
+                    <a href="#projects" class="nav-link magnetic">Projects</a>
+                    <a href="#resources" class="nav-link magnetic">Resources</a>
+                    <a href="#contact" class="nav-link magnetic">Contact</a>
+                    <button class="menu-toggle magnetic">
+                        <span class="menu-line"></span>
+                        <span class="menu-line"></span>
+                        <span class="menu-line"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" data-scroll-section>
+            <div class="hero-content">
+                <div class="hero-label" data-scroll data-scroll-speed="1" data-scroll-delay="0.1">
+                    <span class="scramble-text">Creative Digital Agency</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    <div class="hero-title-line" data-scroll data-scroll-speed="2">
+                        <span class="word">We</span>
+                        <span class="word">craft</span>
+                        <span class="word">digital</span>
+                    </div>
+                    <div class="hero-title-line" data-scroll data-scroll-speed="1.5">
+                        <span class="word highlight">experiences</span>
+                    </div>
+                </h1>
+                
+                <p class="hero-description" data-scroll data-scroll-speed="1.5" data-scroll-delay="0.2">
+                    Award-winning agency specializing in web design, development, and digital products that inspire and deliver results.
+                </p>
+                
+                <div class="hero-cta" data-scroll data-scroll-speed="1" data-scroll-delay="0.3">
+                    <a href="#projects" class="btn-primary magnetic">
+                        <span class="btn-text">View Our Work</span>
+                        <span class="btn-icon"><i class="ri-arrow-right-line"></i></span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-scroll" data-scroll data-scroll-speed="3">
+                <span>Scroll to explore</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section" data-scroll-section>
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item" data-scroll data-scroll-speed="1">
+                        <div class="stat-number counter" data-target="350">350+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-item" data-scroll data-scroll-speed="1.5">
+                        <div class="stat-number counter" data-target="180">180+</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat-item" data-scroll data-scroll-speed="2">
+                        <div class="stat-number counter" data-target="47">50+</div>
+                        <div class="stat-label">Awards Won</div>
+                    </div>
+                    <div class="stat-item" data-scroll data-scroll-speed="2.5">
+                        <div class="stat-number counter" data-target="99">99</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" data-scroll-section>
+            <div class="container">
+                <div class="section-header" data-scroll data-scroll-speed="1">
+                    <span class="section-label reveal-text">What We Do</span>
+                    <h2 class="section-title">
+                        <span class="title-line">Our</span>
+                        <span class="title-line">Services</span>
+                    </h2>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card magnetic-soft" data-scroll data-scroll-speed="0.5">
+                        <div class="service-bg-image">
+                            <img src="https://i.pinimg.com/1200x/53/8d/81/538d81572972247f76d24964e1ecc25e.jpg" alt="Web Development">
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <i class="ri-code-s-slash-line"></i>
+                            </div>
+                            <div class="service-number">01</div>
+                            <h3>Web Development</h3>
+                            <p>Building fast, responsive, and scalable websites using modern technologies and best practices.</p>
+                            <a href="#" class="service-link">
+                                <span>Learn More</span>
+                                <i class="ri-arrow-right-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card magnetic-soft" data-scroll data-scroll-speed="1">
+                        <div class="service-bg-image">
+                            <img src="https://i.pinimg.com/736x/3f/60/31/3f6031b624a627c72d1d96c44b7c58be.jpg" alt="Mobile Apps">
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <i class="ri-smartphone-line"></i>
+                            </div>
+                            <div class="service-number">02</div>
+                            <h3>Mobile Apps</h3>
+                            <p>Creating intuitive mobile experiences for iOS and Android platforms that users love.</p>
+                            <a href="#" class="service-link">
+                                <span>Learn More</span>
+                                <i class="ri-arrow-right-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card magnetic-soft" data-scroll data-scroll-speed="1.5">
+                        <div class="service-bg-image">
+                            <img src="https://i.pinimg.com/1200x/15/93/65/159365f7a12c9dc667635312ee8df784.jpg" alt="Brand Identity">
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <i class="ri-palette-line"></i>
+                            </div>
+                            <div class="service-number">03</div>
+                            <h3>Brand Identity</h3>
+                            <p>Crafting unique brand identities that tell your story and connect with your audience.</p>
+                            <a href="#" class="service-link">
+                                <span>Learn More</span>
+                                <i class="ri-arrow-right-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marquee Section -->
+        <section class="marquee-section" data-scroll-section>
+            <div class="marquee" data-scroll data-scroll-speed="2" data-scroll-direction="horizontal">
+                <div class="marquee-content">
+                    <span>Creative Excellence</span>
+                    <span>•</span>
+                    <span>Digital Innovation</span>
+                    <span>•</span>
+                    <span>Award Winning</span>
+                    <span>•</span>
+                    <span>Creative Excellence</span>
+                    <span>•</span>
+                    <span>Digital Innovation</span>
+                    <span>•</span>
+                    <span>Award Winning</span>
+                    <span>•</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" data-scroll-section>
+            <div class="container">
+                <div class="section-header" data-scroll data-scroll-speed="1">
+                    <span class="section-label">Our Work</span>
+                    <h2 class="section-title">
+                        <span class="title-line">Featured</span>
+                        <span class="title-line">Projects</span>
+                    </h2>
+                </div>
+                
+                <div class="projects-showcase">
+                    <div class="project-card" data-scroll data-scroll-speed="0.5">
+                        <div class="project-card-image">
+                            <img src="https://i.pinimg.com/736x/f4/1f/73/f41f734f18e272fb78925d2e1e45e5b4.jpg" alt="Riyadh Official">
+                            <div class="project-overlay">
+                                <a href="#" class="project-view-btn magnetic">
+                                    <i class="ri-arrow-right-up-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card-content">
+                            <div class="project-card-meta">
+                                <span class="project-tag">Web Development</span>
+                                <span class="project-year">2024</span>
+                            </div>
+                            <h3 class="project-card-title">Riyadh Official</h3>
+                            <p class="project-card-desc">Official website redesign for Saudi Arabia's capital city, featuring modern architecture and seamless user experience</p>
+                            <div class="project-tech-stack">
+                                <span>React</span>
+                                <span>Next.js</span>
+                                <span>GSAP</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-scroll data-scroll-speed="1">
+                        <div class="project-card-image">
+                            <img src="https://i.pinimg.com/1200x/5f/c1/bc/5fc1bc237e75ae7f47ef86f5555a03a8.jpg" alt="Innovation Hub">
+                            <div class="project-overlay">
+                                <a href="#" class="project-view-btn magnetic">
+                                    <i class="ri-arrow-right-up-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card-content">
+                            <div class="project-card-meta">
+                                <span class="project-tag">Digital Platform</span>
+                                <span class="project-year">2024</span>
+                            </div>
+                            <h3 class="project-card-title">Innovation Hub</h3>
+                            <p class="project-card-desc">Complete digital transformation platform for emerging tech startups with AI-powered features</p>
+                            <div class="project-tech-stack">
+                                <span>Vue.js</span>
+                                <span>Node.js</span>
+                                <span>AI/ML</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-scroll data-scroll-speed="1.5">
+                        <div class="project-card-image">
+                            <img src="https://i.pinimg.com/1200x/e4/a4/67/e4a467bcffbcc6bb1c1905ca88ce1678.jpg" alt="Aurora Shop">
+                            <div class="project-overlay">
+                                <a href="#" class="project-view-btn magnetic">
+                                    <i class="ri-arrow-right-up-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card-content">
+                            <div class="project-card-meta">
+                                <span class="project-tag">E-commerce</span>
+                                <span class="project-year">2023</span>
+                            </div>
+                            <h3 class="project-card-title">Aurora</h3>
+                            <p class="project-card-desc">Revolutionary platform with immersive 3D product visualization and AR integration</p>
+                            <div class="project-tech-stack">
+                                <span>Three.js</span>
+                                <span>Blender</span>
+                                <span>WebGL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-cta" data-scroll data-scroll-speed="1">
+                    <a href="#" class="btn-secondary magnetic">
+                        <span>View All Projects</span>
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" data-scroll-section>
+            <div class="container">
+                <div class="section-header" data-scroll data-scroll-speed="1">
+                    <span class="section-label">Learn With Us</span>
+                    <h2 class="section-title">
+                        <span class="title-line">Design Resources</span>
+                        <span class="title-line">& Tutorials</span>
+                    </h2>
+                    <p class="section-description">Comprehensive courses, tutorials, and resources to master modern web development and design.</p>
+                </div>
+                
+                <div class="resources-grid">
+                    <div class="resource-card" data-scroll data-scroll-speed="0.5">
+                        <div class="resource-image">
+                            <img src="https://i.pinimg.com/736x/3a/32/e6/3a32e6c1453e6f2306176130f63ec215.jpg" alt="Course">
+                            <div class="resource-overlay">
+                                <i class="ri-play-circle-fill"></i>
+                            </div>
+                        </div>
+                        <div class="resource-content">
+                            <span class="resource-tag">Course</span>
+                            <h3>Modern Web Development</h3>
+                            <p>Master cutting-edge frontend techniques</p>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card" data-scroll data-scroll-speed="1">
+                        <div class="resource-image">
+                            <img src="https://i.pinimg.com/1200x/54/ab/9f/54ab9fbbb54e497da7989c3825f9aa59.jpg" alt="Workshop">
+                            <div class="resource-overlay">
+                                <i class="ri-play-circle-fill"></i>
+                            </div>
+                        </div>
+                        <div class="resource-content">
+                            <span class="resource-tag">Workshop</span>
+                            <h3>Animation & Motion Design</h3>
+                            <p>Create stunning interactive experiences</p>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card" data-scroll data-scroll-speed="1.5">
+                        <div class="resource-image">
+                            <img src="https://i.pinimg.com/1200x/b9/0c/80/b90c80b1db0f0f3d0543ccdc35c506ba.jpg" alt="Tutorial">
+                            <div class="resource-overlay">
+                                <i class="ri-play-circle-fill"></i>
+                            </div>
+                        </div>
+                        <div class="resource-content">
+                            <span class="resource-tag">Tutorial</span>
+                            <h3>Three.js Fundamentals</h3>
+                            <p>Build immersive 3D web experiences</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-cta" data-scroll data-scroll-speed="1">
+                    <a href="#" class="btn-secondary magnetic">
+                        <span>Explore All Resources</span>
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section" data-scroll-section>
+            <div class="container">
+                <div class="section-header" data-scroll data-scroll-speed="1">
+                    <span class="section-label">Testimonials</span>
+                    <h2 class="section-title">
+                        <span class="title-line">What Clients</span>
+                        <span class="title-line">Say About Us</span>
+                    </h2>
+                </div>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card" data-scroll data-scroll-speed="0.5">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-text">"Nexus transformed our digital presence. Their attention to detail and creative approach exceeded all expectations."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://i.pravatar.cc/100?img=1" alt="Sarah Johnson">
+                            </div>
+                            <div class="author-info">
+                                <div class="author-name">Sarah Johnson</div>
+                                <div class="author-role">CEO, TechStart</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card" data-scroll data-scroll-speed="1">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-text">"Outstanding work! The team delivered beyond what we imagined. Highly professional and creative."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://i.pravatar.cc/100?img=12" alt="Michael Chen">
+                            </div>
+                            <div class="author-info">
+                                <div class="author-name">Michael Chen</div>
+                                <div class="author-role">Founder, InnovateCo</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card" data-scroll data-scroll-speed="1.5">
+                        <div class="testimonial-stars">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-text">"Working with Nexus was a game-changer. They understood our vision and brought it to life beautifully."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://i.pravatar.cc/100?img=5" alt="Emma Davis">
+                            </div>
+                            <div class="author-info">
+                                <div class="author-name">Emma Davis</div>
+                                <div class="author-role">Director, DesignHub</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" data-scroll-section>
+            <div class="contact-content" data-scroll data-scroll-speed="1">
+                <h2 class="contact-title">
+                    <span class="title-line">Let's create</span>
+                    <span class="title-line">something</span>
+                    <span class="title-line highlight">extraordinary</span>
+                </h2>
+                <div class="contact-cta">
+                    <a href="mailto:hello@nexus.agency" class="btn-primary magnetic large">
+                        <span class="btn-text">Get In Touch</span>
+                        <span class="btn-icon"><i class="ri-mail-line"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer data-scroll-section>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-main" data-scroll data-scroll-speed="0.5">
+                        <div class="logo-text">nexus</div>
+                        <p class="footer-tagline">Crafting digital experiences since 2010</p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link magnetic"><i class="ri-instagram-line"></i></a>
+                            <a href="#" class="social-link magnetic"><i class="ri-twitter-x-line"></i></a>
+                            <a href="#" class="social-link magnetic"><i class="ri-linkedin-line"></i></a>
+                            <a href="#" class="social-link magnetic"><i class="ri-dribbble-line"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links" data-scroll data-scroll-speed="1">
+                        <div class="footer-col">
+                            <h4>Services</h4>
+                            <a href="#">Web Development</a>
+                            <a href="#">Mobile Apps</a>
+                            <a href="#">Branding</a>
+                            <a href="#">Consulting</a>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Company</h4>
+                            <a href="#">About Us</a>
+                            <a href="#">Careers</a>
+                            <a href="#">Blog</a>
+                            <a href="#">Contact</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Nexus Agency. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
