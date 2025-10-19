@@ -23,6 +23,7 @@ window.addEventListener('load', () => {
     }, 100);
 });
 
+
 let locoScroll;
 
 function initLocomotiveScroll() {
@@ -41,7 +42,6 @@ function initLocomotiveScroll() {
         resetNativeScroll: true
     });
 
-    // Force initial update
     locoScroll.update();
     
     locoScroll.on('scroll', ScrollTrigger.update);
@@ -67,7 +67,6 @@ function initLocomotiveScroll() {
 
     ScrollTrigger.addEventListener('refresh', () => locoScroll.update());
     
-    // Multiple refresh attempts to ensure content loads
     setTimeout(() => {
         ScrollTrigger.refresh();
         locoScroll.update();
@@ -82,7 +81,6 @@ function initLocomotiveScroll() {
     setupSmoothNavigation();
 }
 
-// Custom Cursor - Simplified (dot only)
 const cursor = document.querySelector('.cursor');
 const cursorDot = document.querySelector('.cursor-dot');
 
@@ -96,7 +94,7 @@ document.addEventListener('mousemove', (e) => {
     cursorDot.style.top = mouseY + 'px';
 });
 
-// Cursor interactions
+
 document.querySelectorAll('a, button, .service-card, .project-card').forEach(elem => {
     elem.addEventListener('mouseenter', () => {
         cursor.classList.add('active');
@@ -107,7 +105,6 @@ document.querySelectorAll('a, button, .service-card, .project-card').forEach(ele
     });
 });
 
-// Magnetic Effect
 document.querySelectorAll('.magnetic').forEach(elem => {
     elem.addEventListener('mousemove', function(e) {
         const rect = this.getBoundingClientRect();
@@ -132,7 +129,6 @@ document.querySelectorAll('.magnetic').forEach(elem => {
     });
 });
 
-// Magnetic Soft Effect
 document.querySelectorAll('.magnetic-soft').forEach(elem => {
     elem.addEventListener('mousemove', function(e) {
         const rect = this.getBoundingClientRect();
@@ -157,38 +153,70 @@ document.querySelectorAll('.magnetic-soft').forEach(elem => {
     });
 });
 
-// Mobile Menu
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
 const mobileMenuClose = document.querySelector('.mobile-menu-close');
 const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-menuToggle.addEventListener('click', () => {
+menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
     mobileMenuOverlay.classList.add('active');
+    document.body.classList.add('menu-open');
     document.body.style.overflow = 'hidden';
     animateMobileMenu();
 });
 
-mobileMenuClose.addEventListener('click', () => {
+function closeMobileMenu() {
     mobileMenuOverlay.classList.remove('active');
+    document.body.classList.remove('menu-open');
     document.body.style.overflow = '';
-});
+}
+
+mobileMenuClose.addEventListener('click', closeMobileMenu);
+
 
 mobileNavLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
+    link.addEventListener('click', function(e) {
         e.preventDefault();
-        const targetId = link.getAttribute('href');
+        e.stopPropagation();
         
-        // Close mobile menu
-        mobileMenuOverlay.classList.remove('active');
-        document.body.style.overflow = '';
+        const targetId = this.getAttribute('href');
+        console.log('Mobile nav clicked:', targetId);
         
-        // Smooth scroll to section
+
+        closeMobileMenu();
+        
+
         setTimeout(() => {
-            smoothScrollToSection(targetId);
-        }, 300);
+            scrollToSection(targetId);
+        }, 400);
     });
 });
+
+function scrollToSection(targetId) {
+    const target = document.querySelector(targetId);
+    
+    if (!target) {
+        console.log('Target not found:', targetId);
+        return;
+    }
+    
+    if (locoScroll) {
+
+        locoScroll.scrollTo(target, {
+            offset: -80,
+            duration: 1000,
+            easing: [0.25, 0.0, 0.35, 1.0]
+        });
+    } else {
+
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+    }
+}
 
 function animateMobileMenu() {
     gsap.from('.mobile-nav-link', {
@@ -200,29 +228,31 @@ function animateMobileMenu() {
     });
 }
 
-// Smooth Navigation for All Links
 function setupSmoothNavigation() {
-    // Handle all nav links and buttons
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        if (anchor.classList.contains('mobile-nav-link')) {
+            return;
+        }
+        
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            smoothScrollToSection(targetId);
+            scrollToSection(targetId);
         });
     });
 }
 
-function smoothScrollToSection(targetId) {
-    const target = document.querySelector(targetId);
-    
-    if (target && locoScroll) {
-        locoScroll.scrollTo(target, {
-            offset: -100,
-            duration: 1200,
-            easing: [0.25, 0.0, 0.35, 1.0]
-        });
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenuOverlay.classList.contains('active')) {
+        closeMobileMenu();
     }
-}
+});
+
+mobileMenuOverlay.addEventListener('click', (e) => {
+    if (e.target === mobileMenuOverlay) {
+        closeMobileMenu();
+    }
+});
 
 class TextScramble {
     constructor(el) {
@@ -297,7 +327,6 @@ scrambleElements.forEach(el => {
     }, 1000);
 });
 
-// Counter Animation
 function animateCounter(elem) {
     const target = parseInt(elem.getAttribute('data-target'));
     const duration = 2000;
@@ -315,7 +344,6 @@ function animateCounter(elem) {
     }, 16);
 }
 
-// Split Text Animation
 function splitText() {
     document.querySelectorAll('.title-line').forEach(line => {
         const text = line.textContent;
@@ -344,7 +372,6 @@ function splitText() {
     });
 }
 
-// Hero Word Animation
 function animateHeroWords() {
     gsap.from('.hero-title .word', {
         y: 100,
@@ -357,10 +384,10 @@ function animateHeroWords() {
     });
 }
 
-// Initialize Animations
 function initAnimations() {
     gsap.registerPlugin(ScrollTrigger);
     
+    // Hero animations
     animateHeroWords();
     
     gsap.from('.hero-label', {
@@ -387,6 +414,7 @@ function initAnimations() {
         ease: 'power3.out'
     });
     
+
     const counters = document.querySelectorAll('.counter');
     const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -399,7 +427,7 @@ function initAnimations() {
     
     counters.forEach(counter => counterObserver.observe(counter));
     
- 
+
     splitText();
     
 
@@ -419,6 +447,7 @@ function initAnimations() {
         });
     });
     
+
     gsap.utils.toArray('.project-card').forEach((card, i) => {
         gsap.from(card, {
             scrollTrigger: {
@@ -435,6 +464,7 @@ function initAnimations() {
         });
     });
     
+
     gsap.utils.toArray('.testimonial-card').forEach((card, i) => {
         gsap.from(card, {
             scrollTrigger: {
@@ -451,6 +481,7 @@ function initAnimations() {
         });
     });
     
+
     gsap.from('.contact-title .title-line', {
         scrollTrigger: {
             trigger: '.contact-title',
@@ -464,6 +495,7 @@ function initAnimations() {
         ease: 'power4.out'
     });
     
+
     gsap.from('.footer-main', {
         scrollTrigger: {
             trigger: 'footer',
@@ -575,36 +607,14 @@ window.addEventListener('resize', () => {
         ScrollTrigger.refresh();
     }, 250);
 });
-
-if (locoScroll) {
-    locoScroll.on('scroll', () => {
-        if (locoScroll.scroll.instance.scroll.y > 0) {
-            locoScroll.update();
-        }
-    });
-}
-
 setInterval(() => {
     if (locoScroll) {
         locoScroll.update();
     }
 }, 2000);
-
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileMenuOverlay.classList.contains('active')) {
-        mobileMenuOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-});
-
 document.body.style.overflow = 'hidden';
 window.addEventListener('load', () => {
     setTimeout(() => {
         document.body.style.overflow = '';
     }, 2000);
 });
-
-console.log('✨ Nexus Premium - Loaded successfully!');
-console.log('🚀 Locomotive Scroll initialized');
-console.log('💫 GSAP animations ready');
-console.log('🎯 Smooth navigation enabled');
